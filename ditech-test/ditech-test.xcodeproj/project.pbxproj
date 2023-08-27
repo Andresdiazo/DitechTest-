@@ -20,6 +20,7 @@
 		E2AED4F92A98C5390037A490 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AED4F82A98C5390037A490 /* ImageHelper.swift */; };
 		E2AED4FB2A98C55B0037A490 /* HttpMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AED4FA2A98C55B0037A490 /* HttpMethods.swift */; };
 		E2AED4FE2A98C8770037A490 /* CoinListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AED4FD2A98C8770037A490 /* CoinListModel.swift */; };
+		E2B23B982A999A7A008DCDCA /* CoinListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B23B972A999A7A008DCDCA /* CoinListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		E2AED4F82A98C5390037A490 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		E2AED4FA2A98C55B0037A490 /* HttpMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethods.swift; sourceTree = "<group>"; };
 		E2AED4FD2A98C8770037A490 /* CoinListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListModel.swift; sourceTree = "<group>"; };
+		E2B23B972A999A7A008DCDCA /* CoinListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +109,7 @@
 		E2AED4C02A98C3990037A490 /* ditech-test */ = {
 			isa = PBXGroup;
 			children = (
-				E2AED4F52A98C5070037A490 /* ViewModel */,
-				E2AED4F42A98C4F70037A490 /* View */,
-				E2AED4F32A98C4E20037A490 /* Models */,
-				E2AED4F22A98C4C30037A490 /* Commons */,
-				E2AED4F12A98C4B80037A490 /* NetworkService */,
+				E2B23B952A999987008DCDCA /* Home */,
 				E2AED4C12A98C3990037A490 /* AppDelegate.swift */,
 				E2AED4C32A98C3990037A490 /* SceneDelegate.swift */,
 				E2AED4CA2A98C39C0037A490 /* Assets.xcassets */,
@@ -138,13 +136,12 @@
 			path = "ditech-testUITests";
 			sourceTree = "<group>";
 		};
-		E2AED4F12A98C4B80037A490 /* NetworkService */ = {
+		E2AED4F12A98C4B80037A490 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				E2AED4F62A98C52B0037A490 /* NetworkService.swift */,
-				E2AED4FA2A98C55B0037A490 /* HttpMethods.swift */,
+				E2B23B962A9999EE008DCDCA /* Network */,
 			);
-			path = NetworkService;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		E2AED4F22A98C4C30037A490 /* Commons */ = {
@@ -155,11 +152,12 @@
 			path = Commons;
 			sourceTree = "<group>";
 		};
-		E2AED4F32A98C4E20037A490 /* Models */ = {
+		E2AED4F32A98C4E20037A490 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				E2B23B972A999A7A008DCDCA /* CoinListPresenter.swift */,
 			);
-			path = Models;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		E2AED4F42A98C4F70037A490 /* View */ = {
@@ -172,12 +170,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		E2AED4F52A98C5070037A490 /* ViewModel */ = {
+		E2AED4F52A98C5070037A490 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E2AED4FD2A98C8770037A490 /* CoinListModel.swift */,
 			);
-			path = ViewModel;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E2AED4FC2A98C5E50037A490 /* Cells */ = {
@@ -185,6 +183,27 @@
 			children = (
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E2B23B952A999987008DCDCA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E2AED4F52A98C5070037A490 /* Model */,
+				E2AED4F42A98C4F70037A490 /* View */,
+				E2AED4F32A98C4E20037A490 /* Presenter */,
+				E2AED4F22A98C4C30037A490 /* Commons */,
+				E2AED4F12A98C4B80037A490 /* Data */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E2B23B962A9999EE008DCDCA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E2AED4F62A98C52B0037A490 /* NetworkService.swift */,
+				E2AED4FA2A98C55B0037A490 /* HttpMethods.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +344,7 @@
 				E2AED4C22A98C3990037A490 /* AppDelegate.swift in Sources */,
 				E2AED4F72A98C52B0037A490 /* NetworkService.swift in Sources */,
 				E2AED4C42A98C3990037A490 /* SceneDelegate.swift in Sources */,
+				E2B23B982A999A7A008DCDCA /* CoinListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,6 @@ class NetworkService {
         return url
     }
     
-    
     func fecthData<T: Decodable>(htttpMethod: HTTPMethod = .get,
                                  path: String,
                                  params: [String: Any]? = nil,
