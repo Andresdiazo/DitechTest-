@@ -7,12 +7,22 @@
 
 import Foundation
 
-class NetworkService {
+protocol NetworkServiceProtocol {
+    func fecthData<T: Decodable>(htttpMethod: HTTPMethod,
+                                 path: String,
+                                 params: [String: Any]? ,
+                                 completionHandler: @escaping (Result<T, Error>) -> Void)
+}
+
+class NetworkService: NetworkServiceProtocol {
+    static let baseURL = "https://rest.coinapi.io/v1/"
+    static let apikey = ["apikey": "4DCD15DF-74B9-4C6D-ACA4-3EB048C57178"]
+    static let shared = NetworkService(baseURL: NetworkService.baseURL)
     
     private var baseURL: URL?
     private let session = URLSession.shared
     
-    init(baseURL: String) {
+    private init(baseURL: String) {
         self.baseURL = URL(string: baseURL)
     }
     
