@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mpc-J4-ax9">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -8,27 +8,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="bhX-Xp-Xlh">
+            <objects>
+                <navigationController id="Mpc-J4-ax9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0XS-24-tTt">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PvZ-jw-hvt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sIQ-Aa-4Hm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-805" y="-27"/>
+        </scene>
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ditech_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="ditech_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="ivn-IA-txW">
-                                <rect key="frame" x="16" y="73" width="367" height="298.33333333333331"/>
+                                <rect key="frame" x="16" y="116.99999999999997" width="367" height="298.33333333333326"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJn-Hv-5on">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJn-Hv-5on">
                                         <rect key="frame" x="68.666666666666671" y="0.0" width="229.66666666666663" height="86"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="86" id="Dyp-a3-5y8"/>
+                                        </constraints>
                                         <string key="text">Welcome to 
 CryptoWallet!</string>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euY-Nk-PgO">
-                                        <rect key="frame" x="4.3333333333333428" y="121" width="358.33333333333326" height="61"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euY-Nk-PgO">
+                                        <rect key="frame" x="4.6666666666666572" y="121" width="358" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="NXj-nQ-v8y"/>
+                                        </constraints>
                                         <string key="text">If you are creating a new wallet press the
 GENERATE button. Take note of the mnemonic 
 phrase, it should be stored in a safe place.</string>
@@ -36,8 +58,11 @@ phrase, it should be stored in a safe place.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T37-Y7-2e1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T37-Y7-2e1">
                                         <rect key="frame" x="1.6666666666666572" y="217.00000000000003" width="363.66666666666674" height="81.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="81.333333333333343" id="2hU-5M-M9C"/>
+                                        </constraints>
                                         <string key="text">address list elephant genuine thunder conduct
 avocado educate chronic useless basic rough
 notable noble water bless labor monster muscle
@@ -48,9 +73,9 @@ bike view caution river flavor</string>
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="euY-Nk-PgO" firstAttribute="top" secondItem="KJn-Hv-5on" secondAttribute="bottom" constant="35" id="HWj-Kf-0Yn"/>
                                     <constraint firstItem="KJn-Hv-5on" firstAttribute="leading" secondItem="ivn-IA-txW" secondAttribute="leading" constant="68.666666666666671" id="V7o-s0-pRc"/>
-                                    <constraint firstItem="T37-Y7-2e1" firstAttribute="top" secondItem="euY-Nk-PgO" secondAttribute="bottom" constant="35.000000000000028" id="dMN-WQ-lRh"/>
-                                    <constraint firstItem="euY-Nk-PgO" firstAttribute="top" secondItem="KJn-Hv-5on" secondAttribute="bottom" constant="35" id="jw0-rU-3Ps"/>
+                                    <constraint firstItem="T37-Y7-2e1" firstAttribute="top" secondItem="euY-Nk-PgO" secondAttribute="bottom" constant="35.000000000000028" id="hfH-n7-Z84"/>
                                     <constraint firstAttribute="trailing" secondItem="KJn-Hv-5on" secondAttribute="trailing" constant="68.666666666666686" id="tWn-IM-o9Z"/>
                                 </constraints>
                             </stackView>
@@ -83,11 +108,20 @@ bike view caution river flavor</string>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qwi-cM-VGv" secondAttribute="height" multiplier="111:17" id="aCA-Wu-OfH"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="tintColor" systemColor="secondaryLabelColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="ACCES WALLET" buttonSize="large">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="ACCES WALLET">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="coinListButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yg3-K5-ioS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -102,40 +136,38 @@ bike view caution river flavor</string>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ivn-IA-txW" secondAttribute="trailing" constant="10" id="3NN-vt-623"/>
+                            <constraint firstItem="y3B-ge-8Rq" firstAttribute="top" secondItem="ivn-IA-txW" secondAttribute="bottom" constant="79.666666666666799" id="5d8-3D-H3S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qwi-cM-VGv" secondAttribute="trailing" constant="49.333333333333371" id="89A-q0-Kba"/>
                             <constraint firstItem="ivn-IA-txW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GKP-ex-ars"/>
                             <constraint firstItem="ivn-IA-txW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="H8N-xu-ysy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="euY-Nk-PgO" secondAttribute="trailing" constant="14.333333333333371" id="HrQ-sI-6QH"/>
-                            <constraint firstItem="euY-Nk-PgO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20.333333333333343" id="NHE-4L-a6N"/>
                             <constraint firstItem="T37-Y7-2e1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17.666666666666657" id="W3d-k7-fxR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T37-Y7-2e1" secondAttribute="trailing" constant="11.666666666666629" id="avU-NE-xDa"/>
-                            <constraint firstItem="KJn-Hv-5on" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="cKe-nl-uxx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9zk-g5-ccs" secondAttribute="bottom" constant="111.33333333333326" id="fvP-cQ-TTz"/>
                             <constraint firstItem="qwi-cM-VGv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54.333333333333343" id="mQZ-HN-YRN"/>
                             <constraint firstItem="y3B-ge-8Rq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="pNp-hp-bWY"/>
-                            <constraint firstItem="9zk-g5-ccs" firstAttribute="top" secondItem="ivn-IA-txW" secondAttribute="bottom" constant="123.66666666666657" id="sTR-At-ipP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y3B-ge-8Rq" secondAttribute="trailing" constant="30" id="ylo-We-8Ck"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kZf-Ve-CHm"/>
                     <connections>
-                        <outlet property="coinListButton" destination="qwi-cM-VGv" id="O0u-bn-hXJ"/>
+                        <outlet property="coinListButton" destination="qwi-cM-VGv" id="ZTa-Fz-nHl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="43.511450381679388" y="-27.464788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Coin List View Controller-->
         <scene sceneID="84R-7l-Vuq">
             <objects>
-                <viewController id="45f-jw-sON" customClass="ViewController" customModule="ditech_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CoinListViewController" id="45f-jw-sON" customClass="CoinListViewController" customModule="ditech_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bNS-Ls-0Fv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="33X-Aq-PjO">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pLi-JI-Pye"/>
@@ -148,7 +180,7 @@ bike view caution river flavor</string>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="coinListTableView" destination="33X-Aq-PjO" id="d2S-c9-Cfq"/>
+                        <outlet property="coinListTableView" destination="33X-Aq-PjO" id="QV6-Df-HHt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62p-PX-8d5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
