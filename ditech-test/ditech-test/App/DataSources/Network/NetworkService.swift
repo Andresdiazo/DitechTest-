@@ -16,7 +16,7 @@ protocol NetworkServiceProtocol {
 
 class NetworkService: NetworkServiceProtocol {
     static let baseURL = "https://rest.coinapi.io/v1/"
-    static let apikey = ["apikey": "4DCD15DF-74B9-4C6D-ACA4-3EB048C57178"]
+    static let apikey = ["apikey": "8882F7CD-35AC-45AC-B3DC-34ED5FDA38D1"]
     static let shared = NetworkService(baseURL: NetworkService.baseURL)
     
     private var baseURL: URL?
@@ -69,13 +69,21 @@ class NetworkService: NetworkServiceProtocol {
         
         let task = session.dataTask(with: request) { data, response, error in
             if let data = data {
-                let responseData = try? JSONDecoder().decode(T.self, from: data)
-                completionHandler(.success(responseData!))
+                do {
+                    let responseData = try JSONDecoder().decode(T.self, from: data)
+                    completionHandler(.success(responseData))
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                    completionHandler(.failure(error))
+                }
             } else if let error = error {
                 print("Error: \(error)")
                 completionHandler(.failure(error))
-                return
+            } else {
+                print("No se recibieron datos del servidor")
+                completionHandler(.failure(NSError(domain: "ServerErrorDomain", code: 0, userInfo: nil)))
             }
+            
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 print("Respuesta inválida del servidor")

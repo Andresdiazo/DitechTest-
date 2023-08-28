@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
+   
     @IBOutlet weak var coinListButton: UIButton!
     
     override func viewDidLoad() {
@@ -44,8 +44,6 @@ class HomeViewController: UIViewController {
             self.navigationController?.pushViewController(coinListViewController, animated: true)
         }
     }
-    
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

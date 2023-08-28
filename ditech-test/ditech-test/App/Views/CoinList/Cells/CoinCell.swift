@@ -13,7 +13,7 @@ class CoinCell: UITableViewCell {
     @IBOutlet weak var assetLabel: UILabel!
     @IBOutlet weak var nameCoinLabel: UILabel!
     @IBOutlet weak var coinImage: UIImageView!
-    
+    @IBOutlet weak var variationLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

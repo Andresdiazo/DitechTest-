@@ -98,6 +98,7 @@
                 <outlet property="coinImage" destination="2lM-T8-bPV" id="BT1-u0-RAo"/>
                 <outlet property="nameCoinLabel" destination="bYN-WV-GeO" id="Lzj-6e-qqO"/>
                 <outlet property="priceLabel" destination="eDo-OZ-NbG" id="ySf-bL-sQ7"/>
+                <outlet property="variationLabel" destination="Bbm-Y7-Wh9" id="J81-Df-fIy"/>
             </connections>
             <point key="canvasLocation" x="122.13740458015266" y="36.971830985915496"/>
         </tableViewCell>

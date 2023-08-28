@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 struct CoinData: Decodable {
     let assetID: String?
     let name: String?
@@ -24,10 +24,13 @@ struct CoinData: Decodable {
     let idIcon: String?
     let dataStart: String?
     let dataEnd: String?
-
+    let price: Double?
+    var image: UIImage?
+    
     private enum CodingKeys: String, CodingKey {
         case assetID = "asset_id"
         case name
+        case price = "price_usd"
         case isCrypto = "type_is_crypto"
         case dataQuoteStart = "data_quote_start"
         case dataQuoteEnd = "data_quote_end"

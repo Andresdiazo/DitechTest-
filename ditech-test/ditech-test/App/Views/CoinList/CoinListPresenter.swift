@@ -19,6 +19,7 @@ protocol CoinListPresenterProtocol {
     func setDelegate(delegate: CoinListDelegate)
     
     func searchData()
+    func getVariationHourAndDate(coin: CoinData) -> Double
 }
 
 class CoinListPresenter {
@@ -64,5 +65,12 @@ extension CoinListPresenter: CoinListPresenterProtocol {
                 self?.delegate?.fail()
             }
         }
+    }
+    
+    func getVariationHourAndDate(coin: CoinData) -> Double {
+        if let volume1DayUSD = coin.volume1DayUSD, let volume1MonthUSD = coin.volume1MonthUSD {
+            return ((volume1DayUSD / volume1MonthUSD))     } else {
+                return 0
+            }
     }
 }
